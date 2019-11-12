@@ -4,7 +4,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using SampleProjectNunit.Driver;
 using SampleProjectNunit.Pages;
-
+using SampleProjectNunit.Utils;
 using System;
 
 
@@ -14,12 +14,12 @@ namespace SampleProjectNunit
     class SampleTest
     {
         private IWebDriver driver;
-        private string driverType = "chrome";
-
+        private readonly string DRIVER =PropertyReader.GetValue("driverChrome");
+  
         [SetUp]
         public void SetUp()
         {
-            this.driver = DriverProvider.setUp(driverType);
+            this.driver = DriverProvider.setUp(DRIVER);
             this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
