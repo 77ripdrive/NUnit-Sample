@@ -1,0 +1,5 @@
+﻿gitattributes
+packages/
+.vs/
+bin/
+obj/
