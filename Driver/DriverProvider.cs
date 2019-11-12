@@ -8,11 +8,9 @@ namespace SampleProjectNunit.Driver
 {
     class DriverProvider
     {
-        private IWebDriver driver;
-
         private DriverProvider() { }
 
-        public static IWebDriver setUp(string driverType)
+        public static IWebDriver SetUp(string driverType)
         {
             switch (driverType)
             {

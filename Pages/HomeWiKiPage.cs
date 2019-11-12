@@ -17,12 +17,12 @@ namespace SampleProjectNunit.Pages
         IWebElement SearchField => this.driver.FindElement(By.XPath("//*[@id='searchInput']"));
         IWebElement SearchButton => this.driver.FindElement(By.CssSelector("#search-form > fieldset > button > i"));
 
-        public void goToPage()
+        public void OpenPage()
         {
             driver.Navigate().GoToUrl("https://www.wikipedia.org/");
         }
 
-        public ResultSearchPage goToResultPage(String data)
+        public ResultSearchPage OpenResultPage(String data)
         {
             this.SearchField.SendKeys(data);
             this.SearchButton.Click();

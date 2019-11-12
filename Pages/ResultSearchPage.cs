@@ -5,14 +5,14 @@ namespace SampleProjectNunit.Pages
 {
     class ResultSearchPage
     {
-        private IWebDriver driver;
+        private IWebDriver Driver;
 
-        IWebElement ResultSearch => this.driver.FindElement(By.CssSelector("#firstHeading"));
+        IWebElement ResultSearch => this.Driver.FindElement(By.CssSelector("#firstHeading"));
 
 
         public ResultSearchPage(IWebDriver driver)
         {
-            this.driver = driver;
+            this.Driver = driver;
 
         }
 

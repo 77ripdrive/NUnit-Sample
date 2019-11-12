@@ -19,7 +19,7 @@ namespace SampleProjectNunit
         [SetUp]
         public void SetUp()
         {
-            this.driver = DriverProvider.setUp(DRIVER);
+            this.driver = DriverProvider.SetUp(DRIVER);
             this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
@@ -32,11 +32,11 @@ namespace SampleProjectNunit
 
         [Test]
         [TestCase("IBM")]
-        public void WikiSearch(String data)
+        public void WikiSearch(string data)
         {
             var homeWiki = new HomeWiKiPage(driver);
-            homeWiki.goToPage();
-            var resultSearchPage = homeWiki.goToResultPage(data);
+            homeWiki.OpenPage();
+            var resultSearchPage = homeWiki.OpenResultPage(data);
             Assert.AreEqual(data, resultSearchPage.SearchResult());
 
         }
