@@ -26,6 +26,7 @@ namespace SampleProjectNunit
         [TearDown]
         public void Teardown()
         {
+            driver.Manage().Cookies.DeleteAllCookies();
             driver.Quit();
         }
 
